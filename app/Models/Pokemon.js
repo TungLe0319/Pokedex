@@ -1,36 +1,27 @@
-export class Pokemon{
+export class Pokemon {
   constructor(data) {
-    this.id = data.id;
     this.name = data.name;
-    this.url = data.url
-    this.weight = data.weight;
-    this.height = data.height;
-    this.abilities = data.abilities;
-    this.types = data.types;
-    this.sprits=data.sprits
-    this.user =data.user
+    this.url = data.url;
   }
 
-  static  GetPokemonCardTemplate() {
+  get CardTemplate() {
     return /*html */ `
-      <div class="col-md-3" style="width: 20rem;">
-        <div class="card">
-          <div>
-            <img src="${this.sprits}" alt="" class="img-fluid" style="width:20rem;height:15rem">
-          </div>
-          <div class="card-body">
-            <div class="d-flex flex-column">
-              <span>${this.url}</span>
-              <span>${this.types}</span>
-              <span>${this.weight}</span>
-              <span>${this.height}</span>
-              <span>${this.abilities}</span>
-
+   <div class="  p-2 text-light selectable  " onclick="app.pokemonsController.getPokemonDetails('${this.url}')">
+             
+              
+              <img src="/resources/pokeball.png" alt="" style="width:1rem;" class="me-1"> ${this.name}
+             
             </div>
-          </div>
-        </div>
-      </div>
-    
     `;
   }
+
+
+
+  
+
+  get WildTemplate() {}
+
+  get ActiveTemplate() {}
+
+  get CaughtTemplate() {}
 }

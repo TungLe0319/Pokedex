@@ -9,6 +9,14 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/Pokemon').Pokemon[]} */
   pokemons = [];
+
+  /** @type {import('./Models/PokemonDetail').PokemonDetail | null} */
+  activePokemon = null;
+
+  /** @type {import('./Models/SandboxPokemon').SandboxPokemon[]} */
+  sandboxPokemon = [];
+
+  user = prompt('What is your Name?');
 }
 
 export const appState = new Proxy(new AppState(), {

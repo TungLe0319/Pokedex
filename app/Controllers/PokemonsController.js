@@ -8,24 +8,20 @@ import { setHTML } from "../Utils/Writer.js";
 
 function drawPokemon() {
   let template = '';
-  appState.pokemons.forEach((p) => (template += p.PokemonCardTemplate));
-  setHTML('pokemonlist', template);
+  appState.pokemons.forEach(p => template += p.CardTemplate)
+  setHTML('apipokemonlist', template);
 }
+
 export class PokemonsController{
 constructor(){
-appState.on('pokemons',drawPokemon())
-this.showPokemon()
-this.fetchPokemon()
+appState.on('pokemons',drawPokemon)
+this.getPokemonAPI()
+
 }
 
 
 
 
-
-showPokemon(){
-  this.getPokemonAPI()
-  setHTML('pokemonlist', Pokemon.GetPokemonCardTemplate())
-}
 async getPokemonAPI(){
 try {
   await pokemonsService.getPokemonAPI()
@@ -35,13 +31,14 @@ try {
 }
 }
 
-
-
-async fetchPokemon(){
+async getPokemonDetails(url){
   try {
-    await pokemonsService.fetchPokemon()
+    await pokemonsService.getPokemonDetails(url)
   } catch (error) {
-    console.error('fetchpokemon',error);
+    console.error('[getPokemonDetail]',error)
+    Pop.error(error)
   }
 }
+
+
 }
