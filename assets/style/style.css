@@ -1,0 +1,23 @@
+/* https://wallpapercave.com/dwp2x/wp3170171.png */
+
+.pokebg {
+background-image: url(https://cdnb.artstation.com/p/assets/images/images/014/189/365/large/yevhen-tarnavskyi-ramenten-1920x1080.jpg?1542876830);
+background-size: cover;
+background-position: center;
+}
+
+.bgcustom {
+  background-color: #fd1a55;
+}
+
+.pokegif1{
+background-image: url(https://i.pinimg.com/originals/ef/72/4f/ef724f2c2cf02a434b8464f17fe40ca1.gif);
+background-size: cover;
+background-position: center;
+}
+
+.pokelist{
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg02.deviantart.net%2F27dd%2Fi%2F2014%2F124%2F3%2F9%2Fkalos_pokedex_wallpaper_by_kalosdex-d7h52e1.png&f=1&nofb=1);
+  background-size: cover;
+  background-position: center;
+}
