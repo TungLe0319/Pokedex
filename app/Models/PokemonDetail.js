@@ -7,8 +7,9 @@ export class PokemonDetail {
     this.name = data.name;
     // FIGURE OUT WHY IN THE HECK DID THIS WORK AND ALL THE VARIATIONS I FREAKING TRIED OH MY GOSH
     
-    this.img = data.img || data.sprites.front_default
+    this.img = data.img || data.sprites.other['official-artwork'].front_default;
     this.types = data.types;
+   
   }
 
   get CardTemplate() {
@@ -16,7 +17,7 @@ export class PokemonDetail {
     
       <div class="">
             <div class="p-2 ">
-            <div class="d-flex justify-content-center border-bottom border-3 border-dark mb-3 text-uppercase elevation-2 rounded">
+            <div class="d-flex justify-content-center border-bottom border-3 border-dark mb-3 text-uppercase ">
                 <h3>${this.name}</h3>
               </div>
               <div class="d-flex justify-content-center align-content-center">
@@ -27,14 +28,20 @@ export class PokemonDetail {
                 </div>
               </div>
               
-              <div class="d-flex justify-content-around mb-2">
-                ${this.typesArray}
+              <div class="d-flex justify-content-center mb-1 mt-2">
+               <span >
+               ${this.typesArray}
+               </span> 
               </div>
             
-              <div class="d-flex justify-content-center mt-5">
-              <button class="btn btn-danger" onclick="app.sandboxPokemonController.addPokemon()" >Add Pokemon</button>
-              </div>
+              <div class="d-flex justify-content-center mt-1">
 
+              <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F1771704%2Fscreenshots%2F6124573%2Fattachments%2F1313609%2Fpokeball.gif&f=1&nofb=1" alt="" style="width:5rem;" class="rounded-circle selectable elevation-4" onclick="app.sandboxPokemonController.addPokemon()">
+          
+              </div>
+<div class="d-flex justify-content-center p-1 mt-1  rounded">
+ <h4 class="text-uppercase">Catch</h4>
+</div>
             </div>
           </div>
     

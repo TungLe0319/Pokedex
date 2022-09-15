@@ -42,15 +42,15 @@ class SandboxPokemonService {
  */
 
   //TODO
-  async toggleActivePokemon(id) {
+  async togglePokemon(id) {
     const pokemon = appState.sandboxPokemon.find((p) => p.id == id);
     if (!pokemon) {
       throw new Error('BAD ID');
     }
 
     pokemon.active = !pokemon.active
-
-    const res = await SandboxServer.put(
+console.log(pokemon.active);
+    await SandboxServer.put(
       `/api/${appState.user}/pokemon/${id}`,
       pokemon
     );

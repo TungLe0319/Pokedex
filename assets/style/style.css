@@ -21,3 +21,15 @@ background-position: center;
   background-size: cover;
   background-position: center;
 }
+/* 
+.sandboxpokemon{
+  height: 50vh;
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Forig00.deviantart.net%2F1291%2Ff%2F2013%2F229%2Ff%2Fc%2Fbw_psychic_basic_pokemon_card_blank_by_the_ketchi-d6i22sn.png&f=1&nofb=1);
+  background-size: cover;
+  background-position: center;
+} */
+
+.scrolldown{
+  height: 100vh;
+  overflow: scroll;
+}

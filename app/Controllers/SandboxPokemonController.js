@@ -16,20 +16,7 @@ export class SandboxPokemonController {
     appState.on('sandboxPokemon', drawSandboxPokemon);
   }
 
-  /**
- * async addSpell() {
-    try {
-      await sandboxSpellsService.addSpell()
-      Pop.success('Spell learned')
-      if (appState.sandboxSpells.length == 2) {
-        Pop.toast('isn\t this is awesone', 'question', 'center', 8000, true)
-      }
-    } catch (error) {
-      console.error('[AddingSpell]', error)
-      Pop.error(error)
-    }
-  }
- */
+
 
 
 
@@ -52,8 +39,9 @@ async addPokemon(){
     }
   }
 
-  async togglePokemonPrepared(id) {
+  async togglePokemon(id) {
     try {
+      await sandboxPokemonService.togglePokemon(id)
     } catch (error) {
       console.error('[togglePokemonPrepared]', error);
       Pop.error(error);

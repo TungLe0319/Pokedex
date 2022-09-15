@@ -7,8 +7,12 @@ import { api } from './AxiosService.js';
 class PokemonsService {
   async getPokemonAPI() {
     // https://pokeapi.co/api/v2/pokemon/{id or name}/
-    const res = await api.get('/api/v2/pokemon');
-    // console.log('result:', res.data.results);
+    const res = await api.get('/api/v2/pokemon',{
+      params:{
+        limit:1000
+      }
+    });
+    console.log('result:', res.data.results);
     appState.pokemons = res.data.results.map((pokemon) => new Pokemon(pokemon));
     // console.log(appState.pokemons);
   
