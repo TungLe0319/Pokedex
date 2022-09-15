@@ -9,7 +9,7 @@ class SandboxPokemonService {
     //   return;
     // }
 
-   appState.sandboxPokemon.find((s) => s.name == appState.activePokemon.id);
+   appState.sandboxPokemon.find((s) => s.id == appState.activePokemon.id);
  
     const res = await SandboxServer.post(
  `/api/${appState.user}/pokemon`,appState.activePokemon
