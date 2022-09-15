@@ -2,6 +2,9 @@ import { appState } from '../AppState.js';
 import { SandboxPokemon } from '../Models/SandboxPokemon.js';
 import { SandboxServer } from './AxiosService.js';
 
+
+
+
 class SandboxPokemonService {
   //TODO HERE IS WHERE THE PROBLEM IS I BELIEVE WITH
   async addPokemon() {
