@@ -9,11 +9,10 @@ class SandboxPokemonService {
     //   return;
     // }
 
-    appState.sandboxPokemon.find((s) => s.name == appState.activePokemon.id);
-
+   appState.sandboxPokemon.find((s) => s.name == appState.activePokemon.id);
+ 
     const res = await SandboxServer.post(
-      `/api/${appState.user}/pokemon`,
-      appState.activePokemon.name
+ `/api/${appState.user}/pokemon`,appState.activePokemon
     );
     const newPokemon = new SandboxPokemon(res.data);
     appState.sandboxPokemon = [...appState.sandboxPokemon, newPokemon];
@@ -45,11 +44,11 @@ class SandboxPokemonService {
   //TODO
   async toggleActivePokemon(id) {
     const pokemon = appState.sandboxPokemon.find((p) => p.id == id);
-    if (!spell) {
+    if (!pokemon) {
       throw new Error('BAD ID');
     }
 
-    //pokemon.active = !pokemon.active
+    pokemon.active = !pokemon.active
 
     const res = await SandboxServer.put(
       `/api/${appState.user}/pokemon/${id}`,
@@ -68,7 +67,7 @@ class SandboxPokemonService {
 
   // appState.sandboxSpells = res.data.map(s => new SandboxSpell(s))
   //TODO
-  async deletePokemon() {
+  async deletePokemon(id) {
     await SandboxServer.delete(`/api/${appState.user}/pokemon/${id}`);
     appState.sandboxPokemon = appState.sandboxPokemon.filter((p) => p.id != id);
   }

@@ -5,20 +5,25 @@ export class SandboxPokemon extends PokemonDetail {
   constructor(data) {
     super(data); //super  is constructor of  PokemonDetail
 
-  this.img = this.sprites.front_default
+  
+
   }
 
   get CardTemplate() {
     return /*html */ `
     <div class="card">
     <div class="card-body">
-    // Put request
-<input type="checkbox" >
+    <div class="d-flex justify-content-center">
+    
+    <h6>${this.name}</h6>
+    </div>
+<div class="d-flex justify-content-center">
+<img src="${this.img}" alt="" style="width:2rem;">
 
-<img src="${this.sprites.front_default}" alt="" style="width:1rem;">
-    <h3>${this.name}</h3>
-  
-    <i class="mdi mdi-delete-forever on-hover" onclick="app.sandboxPokemonController.deletePokemon('${this.id}')"></i>
+</div>
+
+  <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fpokeball-clipart-open-drawing-2.png&f=1&nofb=1" alt="" style="width:1.5rem;" title="release" class="selectable" onclick="app.sandboxPokemonController.deletePokemon('${this.id}')">
+   
 
     </div>
     </div>
